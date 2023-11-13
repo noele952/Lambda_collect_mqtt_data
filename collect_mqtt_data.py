@@ -1,9 +1,9 @@
+# set env variable DYNAMO_DB_TABLE_PREFIX
 import boto3
 import json
 from datetime import datetime
 from decimal import Decimal
 
-DYNAMODB_TABLE_PREFIX = 'dynamodb_table_prefix'
 
 dynamodb = boto3.resource('dynamodb')
 lambda_client = boto3.client('lambda')

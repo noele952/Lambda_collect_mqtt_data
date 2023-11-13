@@ -15,7 +15,7 @@ This solution utilizes AWS Lambda and DynamoDB to store sensor data transmitted 
 
 ## Overview
 
-- Checks if the DynamoDB table for the machine exists; creates it if not.
+- Checks if the DynamoDB table for the IoT machine exists, creates it if not.
 - Receives events containing sensor type and value.
 - Saves the sensor data in DynamoDB with a composite key (timestamp and sensor type).
 
@@ -45,9 +45,13 @@ Invoke the Lambda function with an event containing the following parameters:
 
 ## Environment Variables
 
-DYNAMODB_TABLE_PREFIX = 'dynamodb_table_prefix'
+- **`DYNAMODB_TABLE_PREFIX`**: The prefix for the DynamoDB table name. Customize this variable by either setting it as an Environment Variable in the Lambda console or directly modifying the code with your desired prefix.
 
-Customize the DYNAMODB_TABLE_PREFIX variable by either setting it as an Environment Variable in the Lambda console or directly modifying the code with your desired bucket name.
+  Example:
+
+  ```plaintext
+  DYNAMODB_TABLE_PREFIX=myTablePrefix
+  ```
 
 ## Dependencies
 
